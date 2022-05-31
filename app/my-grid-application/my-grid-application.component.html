@@ -1,0 +1,23 @@
+<!-- src/app/my-grid-application/my-grid-application.component.html -->
+<nested-tabs (tabChanged)="currentTab = $event">
+  <nested-tab title="First grid">
+    <div style="width: 100%;">
+        <ag-grid-angular #agGrid 
+          style="width: 100%; height: 200px;" 
+          class="ag-theme-fresh" 
+          [gridOptions]="gridOptions">
+        </ag-grid-angular>
+    </div>   
+  </nested-tab>
+  <nested-tab title="Second grid" #myTab>
+    <div style="width: 100%;">
+        <ag-grid-angular #agGrid2 *ngIf="myTab.hasBeenActive"
+          style="width: 100%; height: 200px;" 
+          class="ag-theme-fresh" 
+          [gridOptions]="gridOptions"
+          [rowData]="getRowData2()">
+        </ag-grid-angular>
+    </div>    
+  </nested-tab>
+</nested-tabs>
+

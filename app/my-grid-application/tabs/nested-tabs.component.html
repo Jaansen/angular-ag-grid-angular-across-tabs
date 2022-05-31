@@ -1,0 +1,14 @@
+<div class="nested-tabs-bar" >
+    <ul class="nested-tabs clearfix">
+        <li *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
+            <a>{{tab.title}}</a>
+            <div class="active-bar"></div>
+        </li>
+    </ul>
+    <div class="other-menu-items">
+        <ng-content></ng-content>
+    </div>
+</div>
+<div class="nested-tab-content"> 
+    <ng-content select="nested-tab"></ng-content>
+</div>

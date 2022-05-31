@@ -1,0 +1,24 @@
+
+.nested-tabs a {
+    color: darkgray;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.nested-tabs > .active > .active-bar {
+    color: orangered;
+    background-color: inherit;
+    border-top: 3px solid orangered;
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+    height: 3px;
+    width: 100%;
+}
+
+.nested-tabs > .active > a {
+    color: orangered;
+    background-color: inherit;
+    cursor: default;
+}
+
